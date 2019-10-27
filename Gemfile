@@ -30,6 +30,7 @@ gem 'jbuilder', '~> 2.5'
 
 #bootstrap
 gem 'bootstrap-sass'
+gem 'simple_form'
 
 
 
