@@ -13,7 +13,7 @@ class GroupsController < ApplicationController
     if @group.save
       redirect_to groups_path, notice: '创建成功!'
     else
-      render :new, notice: '创建失败!'
+      render :new, alert: '创建失败!'
     end
   end
 
@@ -27,12 +27,18 @@ class GroupsController < ApplicationController
 
   def update
     @group = Group.find(params[:id])
-    
+
     if @group.update(group_params)
       redirect_to groups_path, notice: '更新成功!'
     else
-      render :edit, notice: '更新失败!'
+      render :edit, alert: '更新失败!'
     end
+  end
+
+  def destroy
+    @group = Group.find(params[:id])
+    @group.destroy
+    redirect_to groups_path, alert: '删除成功!'
   end
 
   private
