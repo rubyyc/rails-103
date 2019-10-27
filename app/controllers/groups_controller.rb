@@ -13,7 +13,7 @@ class GroupsController < ApplicationController
     if @group.save
       redirect_to groups_path, notice: '创建成功!'
     else
-      render :new, alert: '创建失败!'
+      render :new
     end
   end
 
@@ -31,7 +31,7 @@ class GroupsController < ApplicationController
     if @group.update(group_params)
       redirect_to groups_path, notice: '更新成功!'
     else
-      render :edit, alert: '更新失败!'
+      render :edit
     end
   end
 
