@@ -9,7 +9,9 @@
         <td>#</td>
         <td>Title</td>
         <td>Description</td>
+        <td>Creator </td>
         <td colspan="2">操作</td>
+
       </tr>
     </thead>
 
@@ -19,6 +21,7 @@
           <td>#</td>
           <td><%= link_to group.title, group %></td>
           <td><%= group.description %></td>
+          <td><%= group.user.email %></td>
           <td><%= link_to 'Edit', edit_group_path(group), :class => "btn btn-info" %></td>
           <td><%= link_to 'Delete', group_path(group), method: :delete, :class => "btn btn-danger", data: { confirm: 'Are you sure?'} %></td>
         </tr>
